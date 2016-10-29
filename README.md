@@ -9,12 +9,14 @@ A nodejs Azure Function to post to Slack
 # 2 TLDR;
 
 1. Fork this project
-2. Create an Azure function of type `HttpTrigger-NodeJS` and `Configure continous integration`
+2. Create an `Azure function App` from the portal (as at this time Azure Functions are still in preview you may want to go [here](https://portal.azure.com/#create/Microsoft.FunctionApp)
 3. Set the forked repo as your deployment source (gear icon)
-4. go to the `Function app settings`
-5. Create a [Slack Webhook](https://my.slack.com/services/new/incoming-webhook/)
-6. Add an `App Setting` named `SLACK_URL` to your Azure Function, pointing to the Slack Webhook
-7. Test the function by adding a payload (HTTP POST) to the functions's `Run` body
+4. Create a function called `Slackbot` (or whatever name you have changed the function into in your fork)
+5. wait for the repo to sync
+6. go to the `Function app settings`
+7. Create a [Slack Webhook](https://my.slack.com/services/new/incoming-webhook/)
+8. Add an `App Setting` named `SLACK_URL` to your Azure Function, pointing to the Slack Webhook
+9. Test the function by adding a payload (HTTP POST) to the functions's `Run` body
 ```
 {
     "channel": "<webhook-channel>",
@@ -42,4 +44,3 @@ A nodejs Azure Function to post to Slack
     }]
 }
 ```
-8.
