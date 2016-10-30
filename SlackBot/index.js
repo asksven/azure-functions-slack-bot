@@ -36,6 +36,7 @@ module.exports = function(context, req) {
     // retrieve the environment variable from the "App Settings" as this a kinda secret
     context.log('Slack Webhook URL: ' + url);
     context.log('Body: ' + req.body);
+    context.log('channel: ' + req.body.channel);
 
     // Build the slack API call
     var msg = {
