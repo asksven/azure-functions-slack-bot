@@ -13,6 +13,7 @@ A nodejs Azure Function to post to Slack
 3. Set the forked repo as your deployment source (gear icon)
 4. Create a function called `Slackbot` (or whatever name you have changed the function into in your fork)
 5. wait for the repo to sync
+6. Tricky part: for whatever reason Azure Functions do not run `npm install`. Therefore you need to go to `Function app Settings - Kudu` and open the console, go to `site/wwwroot/Slackbot` and run `npm install` from the console command-line
 6. go to the `Function app settings`
 7. Create a [Slack Webhook](https://my.slack.com/services/new/incoming-webhook/)
 8. Add an `App Setting` named `SLACK_URL` to your Azure Function, pointing to the Slack Webhook
