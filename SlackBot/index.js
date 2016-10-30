@@ -1,5 +1,14 @@
 var request = require('request');
 
+// a helper to validate a JSON object
+var validator = function isValidJson(json) {
+    try {
+        JSON.parse(json);
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
 // a helper converting the notifications to Slack attachments
 var noticeToAttach = function(arr) {
     var attachments = [];
@@ -35,6 +44,11 @@ module.exports = function(context, req) {
 
     // retrieve the environment variable from the "App Settings" as this a kinda secret
     context.log('Slack Webhook URL: ' + url);
+
+    // validate the BODY as being a valid JSON object
+    context.log("Is {}}?: " + isValidJson("{}")); // true
+    context.log("Is req.body valid?: " + isValidJson(req.body)); // true
+
     context.log('Body: ' + req.body);
     context.log('channel: ' + req.body.channel);
 
