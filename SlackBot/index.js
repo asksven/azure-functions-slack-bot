@@ -1,7 +1,7 @@
 var request = require('request');
 
 // a helper to validate a JSON object
-var validator = function isValidJson(json) {
+var validator = function(json) {
     try {
         JSON.parse(json);
         return true;
@@ -46,8 +46,8 @@ module.exports = function(context, req) {
     context.log('Slack Webhook URL: ' + url);
 
     // validate the BODY as being a valid JSON object
-    context.log("Is {}}?: " + validator.isValidJson("{}")); // true
-    context.log("Is req.body valid?: " + validator.isValidJson(req.body)); // true
+    context.log("Is {}}?: " + validator("{}")); // true
+    context.log("Is req.body valid?: " + validator(req.body)); // true
 
     context.log('Body: ' + req.body);
     context.log('channel: ' + req.body.channel);
