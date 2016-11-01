@@ -45,3 +45,17 @@ A nodejs Azure Function to post to Slack
     }]
 }
 ```
+
+#3 Invoking
+
+Pick your poison. Here a Powershell-snippet if you need some help to get going:
+
+```
+# tested with PS 5.1
+$url = "<your-azure-function-endpoint-goes-here>"
+
+$body = '{ "channel": "<channel>", "username": "<botname>", "text": "This is your last notice", "icon_url": "", "icon_emoji": ":lightning_cloud:", "fallback": "Upgrade your client", "notifications": [{ "type": "error", "title": "Error title", "text": "This is an error notification" }, { "type": "warn", "title": "Warn title", "text": "This is a warning notification" }, { "type": "info", "title": "Info title", "text": "This is an info notification" }] }'
+	
+
+Invoke-RestMethod $url -Body $body -Method Post -ContentType 'application/json'
+```
