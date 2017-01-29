@@ -1,12 +1,12 @@
 module.exports = function (context, data) {
-    context.log('Webhook was triggered with data: ' + data);
+    context.log('Function was triggered with data: %j' + data);
 
     var request = require('request');
 
     if(data) {
         var slackUrl = process.env["SLACK_URL"];
         context.log('Slack webhook: ' + slackUrl);
-        
+
         var text = {
             "text": "Something happened!!\n<" + data.context.portalLink + "|Check it out>"
         };
