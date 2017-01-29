@@ -1,7 +1,7 @@
 {
   "name": "SlackBotAzureALerts",
   "description": "A function to post Azure Alerts to Slack",
-  "version": "0.1",
+  "version": "0.1.0",
   "author": "Sven Knispel <sven.knispel@gmail.com>",
   "license": "Apache-2.0",
   "dependencies": {
