@@ -5,6 +5,8 @@ module.exports = function (context, data) {
 
     if(data) {
         var slackUrl = process.env["SLACK_URL"];
+        context.log('Slack webhook: ' + slackUrl);
+        
         var text = {
             "text": "Something happened!!\n<" + data.context.portalLink + "|Check it out>"
         };
