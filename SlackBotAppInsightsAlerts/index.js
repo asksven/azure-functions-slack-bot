@@ -1,5 +1,5 @@
 module.exports = function (context, data) {
-    context.log('Function was triggered with data: %j' + data);
+    context.log('Function was triggered with data:' + JSON.stringify(data, null, 2));
 
     var request = require('request');
 
