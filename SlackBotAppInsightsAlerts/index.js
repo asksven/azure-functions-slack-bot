@@ -10,7 +10,7 @@ module.exports = function (context, data) {
         var slackUrl = process.env["SLACK_URL"];
         context.log('Slack webhook: ' + slackUrl);
 
-        # we expect a message of the form described here: https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/insights-webhooks-alerts
+      // we expect a message of the form described here: https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/insights-webhooks-alerts
 
         if (data.status && data.context) {
           status = data.status;
