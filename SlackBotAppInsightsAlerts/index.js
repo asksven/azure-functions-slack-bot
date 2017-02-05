@@ -3,7 +3,7 @@ module.exports = function (context, data) {
 
     var request = require('request');
 
-    var status = 'unknown'; # will be "Activated" or "Resolved"
+    var status = 'unknown'; // will be "Activated" or "Resolved"
     var resourceName = 'unknown';
 
     if(data) {
