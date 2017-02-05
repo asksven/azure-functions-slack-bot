@@ -3,12 +3,28 @@ module.exports = function (context, data) {
 
     var request = require('request');
 
+    var status = 'unknown'; # will be "Activated" or "Resolved"
+    var resourceName = 'unknown';
+
     if(data) {
         var slackUrl = process.env["SLACK_URL"];
         context.log('Slack webhook: ' + slackUrl);
 
+        # we expect a message of the form described here: https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/insights-webhooks-alerts
+
+        if (data.status && data.context) {
+          status = data.status;
+
+          if (data.context.resourceName) {
+            resourceName = data.context.resourceName;
+          }
+
+        } else {
+          context.log('data is supposed to contain a "status" and a "context"');
+        }
+
         var text = {
-            "text": "Something happened!!\n<" + data.context.portalLink + "|Check it out>"
+            "text": "Alert " + data.context.name + ': 'status + "\n" + data.context.description + "\n<" + data.context.portalLink + "|Link>"
         };
 
         var requestData = {
