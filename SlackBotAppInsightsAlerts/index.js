@@ -24,7 +24,7 @@ module.exports = function (context, data) {
         }
 
         var text = {
-            "text": "Alert " + data.context.name + ': 'status + "\n" + data.context.description + "\n<" + data.context.portalLink + "|Link>"
+            "text": "Alert " + data.context.name + ': ' + status + "\n" + data.context.description + "\n<" + data.context.portalLink + "|Link>"
         };
 
         var requestData = {
