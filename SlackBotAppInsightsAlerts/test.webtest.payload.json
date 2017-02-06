@@ -1,0 +1,27 @@
+{
+  "status": "Resolved",
+  "context": {
+    "id": "/subscriptions/11111111-2222-2222-2222-2222222222/resourceGroups/test-app-rg/providers/microsoft.insights/alertrules/alerttestappalive",
+    "name": "alerttestappalive",
+    "description": "",
+    "conditionType": "Webtest",
+    "condition": {
+      "webTestName": "alerttestappalive-alerttestapp",
+      "failureDetails": "",
+      "metricName": "Failed Locations",
+      "metricUnit": "locations",
+      "metricValue": "0",
+      "threshold": "3",
+      "timeAggregation": "Sum",
+      "operator": "GreaterThan",
+      "windowSize": "5"
+    },
+    "subscriptionId": "11111111-2222-2222-2222-2222222222",
+    "resourceGroupName": "test-app-rg",
+    "timestamp": "02/05/2017 15:20:27",
+    "resourceName": "AlertTest",
+    "resourceType": "components",
+    "resourceId": "/subscriptions/11111111-2222-2222-2222-2222222222/resourceGroups/test-app-rg/providers/microsoft.insights/components/AlertTestApp",
+    "portalLink": "https://go.microsoft.com/fwlink/?LinkID=615149&subscriptionId=11111111-2222-2222-2222-2222222222&resourceGroup=test-app-rg&resourceType=webtests&resourceName=alerttestappalive"
+  }
+}
