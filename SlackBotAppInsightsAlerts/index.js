@@ -21,7 +21,7 @@ module.exports = function (context, data) {
       };
     } catch (e) {
       text = {
-        "text": "An error occured. Payload was: ```" + JSON.stringify(data, null, 2) + "```"
+        "text": "An error occured: " + err + ". Payload was: ```" + JSON.stringify(data, null, 2) + "```"
       };
 
     } finally {
