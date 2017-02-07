@@ -22,13 +22,13 @@ module.exports = function (context, data) {
         };
       } catch (e) {
         text = {
-          "text": "An error occured: " + e + ". Payload was: ```" + JSON.stringify(data, null, 2) + "```"
+          "text": "An error occured: " + e + ". Payload was:\n" + JSON.stringify(data, null, 2)
         };
       }
 
     } else {
       text = {
-        "text": "An error occured: payload does not contain a \'context\'"
+        "text": "An error occured: payload does not contain a \'context\'. . Payload was:\n" + JSON.stringify(data, null, 2)
       };
     }
 
