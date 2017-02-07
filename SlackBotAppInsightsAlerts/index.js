@@ -28,7 +28,7 @@ module.exports = function (context, data) {
 
     } else {
       text = {
-        "text": "An error occured: payload does not contain a 'context'";
+        "text": "An error occured: payload does not contain a \'context\'";
       };
     }
 
