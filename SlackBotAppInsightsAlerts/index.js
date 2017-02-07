@@ -13,19 +13,23 @@ module.exports = function (context, data) {
     context.log('Slack webhook: ' + slackUrl);
 
     // we expect a message of the form described here: https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/insights-webhooks-alerts
+    if (data.context)
+    {
+      try {
 
-    try {
+        text = {
+          "text": "Alert! " + data.context.conditionType + ": " + data.status + "\n" + data.context.name + ': ' +  + "\n" + data.context.description + "\n<" + data.context.portalLink + "|Link>"
+        };
+      } catch (e) {
+        text = {
+          "text": "An error occured: " + e + ". Payload was: ```" + JSON.stringify(data, null, 2) + "```"
+        };
+      }
 
+    } else {
       text = {
-        "text": "Alert! " + data.context.conditionType + ": " + data.status + "\n" + data.context.name + ': ' +  + "\n" + data.context.description + "\n<" + data.context.portalLink + "|Link>"
+        "text": "An error occured: payload does not contain a 'context'";
       };
-    } catch (e) {
-      text = {
-        "text": "An error occured: " + e + ". Payload was: ```" + JSON.stringify(data, null, 2) + "```"
-      };
-
-    } finally {
-
     }
 
     var requestData = {
