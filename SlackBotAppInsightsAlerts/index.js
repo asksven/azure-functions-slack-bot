@@ -82,6 +82,6 @@ module.exports = function (context, data) {
           status: response.statusCode,
           body: 'Error: ' + body
         }
-      };
-    }
+      }
+    })
 }
