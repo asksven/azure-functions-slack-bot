@@ -83,5 +83,6 @@ module.exports = function (context, data) {
           body: 'Error: ' + body
         }
       }
-    })
+    });
+  }
 }
