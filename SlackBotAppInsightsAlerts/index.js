@@ -55,7 +55,7 @@ module.exports = function (context, data) {
 
     var msg = {
       // channel: 'testing',
-      username: 'testbot',
+      // username: 'testbot',
       // icon_emoji: ':lightning_cloud:',
       mrkdwn: true,
       text: text,
